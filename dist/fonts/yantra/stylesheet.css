@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Regular.eot');
+    src: local('Yantramanav Regular'), local('Yantramanav-Regular'),
+        url('Yantramanav-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Regular.woff2') format('woff2'),
+        url('Yantramanav-Regular.woff') format('woff'),
+        url('Yantramanav-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Medium.eot');
+    src: local('Yantramanav Medium'), local('Yantramanav-Medium'),
+        url('Yantramanav-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Medium.woff2') format('woff2'),
+        url('Yantramanav-Medium.woff') format('woff'),
+        url('Yantramanav-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Thin.eot');
+    src: local('Yantramanav Thin'), local('Yantramanav-Thin'),
+        url('Yantramanav-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Thin.woff2') format('woff2'),
+        url('Yantramanav-Thin.woff') format('woff'),
+        url('Yantramanav-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Black.eot');
+    src: local('Yantramanav Black'), local('Yantramanav-Black'),
+        url('Yantramanav-Black.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Black.woff2') format('woff2'),
+        url('Yantramanav-Black.woff') format('woff'),
+        url('Yantramanav-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Light.eot');
+    src: local('Yantramanav Light'), local('Yantramanav-Light'),
+        url('Yantramanav-Light.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Light.woff2') format('woff2'),
+        url('Yantramanav-Light.woff') format('woff'),
+        url('Yantramanav-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url('Yantramanav-Bold.eot');
+    src: local('Yantramanav Bold'), local('Yantramanav-Bold'),
+        url('Yantramanav-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Yantramanav-Bold.woff2') format('woff2'),
+        url('Yantramanav-Bold.woff') format('woff'),
+        url('Yantramanav-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

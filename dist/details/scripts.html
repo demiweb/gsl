@@ -1,0 +1,130 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<!--<script src="js/jquery.nice-select.min.js"></script>-->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+<script src="./libs/jquery.raty.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+
+<script src="https://unpkg.com/animatorjs@latest/dist/animator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+<script type="text/javascript" src="./libs/paroller.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script src="./libs/marquee.js"></script>
+<script src="./libs/tweenmax.min.js"></script>
+<script src="./libs/scrollmagic.js"></script>
+<script src="./libs/anim.gsap.js"></script>
+<script src="./libs/add.indicators.js"></script>
+<script src="./libs/frameByFrame.js"></script>
+
+<script src="https://unpkg.com/@barba/core"></script>
+
+<!-- jsdelivr -->
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
+<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.3/smooth-scrollbar.js"></script>
+
+<script type="text/javascript" class="main-script" src="./js/scripts.min.js"></script>
+<script type="module" class="" src="./libs/modulegrid.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
+<!-- init barba with a simple opacity transition -->
+<script type="text/javascript">
+
+    function goFooterSlide() {
+        if (window.innerWidth > 922) {
+            gsap.set('.footer', { yPercent: -50 })
+
+            const uncover = gsap.timeline({ paused:true })
+
+            uncover
+                .to('.footer', { yPercent: 0, ease: 'none' })
+            ;
+
+            ScrollTrigger.create({
+                trigger: 'main',
+                start: 'bottom bottom',
+                end: '+=75%',
+                animation: uncover,
+                scrub: true,
+                markers: false,
+            })
+        }
+    }
+    goFooterSlide();
+
+
+    function reinitScripts() {
+        const bottomDOM = document.getElementsByTagName("body")[0]
+        const newScript = document.createElement("script")
+        const oldScript = document.querySelector(".main-script")
+        newScript.src = "./js/scripts.min.js"
+        newScript.className = "main-script"
+        oldScript.remove()
+        bottomDOM.appendChild(newScript)
+    }
+
+    function pageTransition() {
+        var tl = gsap.timeline();
+        tl.to('ul.transition li', {duration: .5, translateY: 0, transformOrigin: "bottom left", stagger: .2})
+        tl.to('ul.transition li', {
+            duration: .5,
+            translateY: "-100%",
+            transformOrigin: "bottom left",
+            stagger: .1,
+            delay: .1
+        })
+    }
+
+
+    function delay(n) {
+        n = n || 2000;
+        return new Promise(done => {
+            setTimeout(() => {
+                done();
+            }, n)
+        })
+    }
+
+    // barba.init({
+    //     sync: true,
+    //     transitions: [{
+    //         async leave(data) {
+    //             const done = this.async();
+    //             pageTransition();
+    //             await delay(1500);
+    //             done();
+    //         },
+    //         async enter(data) {
+    //
+    //         },
+    //         async once(data) {
+    //
+    //         }
+    //     }],
+    //
+    // });
+    // barba.hooks.beforeEnter((data) => {
+    //     // this hook will be called during every transitions
+    //     console.clear();
+    //     reinitScripts();
+    // });
+</script>
