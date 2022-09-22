@@ -10,16 +10,68 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     .play {
       width: 4.5313vw;
       height: 4.5313vw;
       margin-top: 1.5625vw;
       cursor: pointer;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+  }
+}
+
+.reveal-hand {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+}
+
+.bg-hand {
+  width: 29.3750vw;
+  height: 42.6563vw;
+  position: absolute;
+  bottom: 0;
+  right: 4.7917vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.scroll-rev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 6.4063vw;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4583vw;
+    line-height: 1.3021vw;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 1.1458vw;
+  }
+
+  img {
+    width: 1.8229vw;
+    height: 2.0833vw;
   }
 }
 
@@ -29,18 +81,21 @@
   position: absolute;
   top: 0;
   left: 0;
+
   .img {
     z-index: 2;
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .video {
     z-index: 1;
     position: absolute;
@@ -49,6 +104,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+
     video, iframe {
       width: 100%;
       height: 100%;
