@@ -69,62 +69,8 @@
             })
         }
     }
-    goFooterSlide();
+    // goFooterSlide();
 
 
-    function reinitScripts() {
-        const bottomDOM = document.getElementsByTagName("body")[0]
-        const newScript = document.createElement("script")
-        const oldScript = document.querySelector(".main-script")
-        newScript.src = "./js/scripts.min.js"
-        newScript.className = "main-script"
-        oldScript.remove()
-        bottomDOM.appendChild(newScript)
-    }
 
-    function pageTransition() {
-        var tl = gsap.timeline();
-        tl.to('ul.transition li', {duration: .5, translateY: 0, transformOrigin: "bottom left", stagger: .2})
-        tl.to('ul.transition li', {
-            duration: .5,
-            translateY: "-100%",
-            transformOrigin: "bottom left",
-            stagger: .1,
-            delay: .1
-        })
-    }
-
-
-    function delay(n) {
-        n = n || 2000;
-        return new Promise(done => {
-            setTimeout(() => {
-                done();
-            }, n)
-        })
-    }
-
-    // barba.init({
-    //     sync: true,
-    //     transitions: [{
-    //         async leave(data) {
-    //             const done = this.async();
-    //             pageTransition();
-    //             await delay(1500);
-    //             done();
-    //         },
-    //         async enter(data) {
-    //
-    //         },
-    //         async once(data) {
-    //
-    //         }
-    //     }],
-    //
-    // });
-    // barba.hooks.beforeEnter((data) => {
-    //     // this hook will be called during every transitions
-    //     console.clear();
-    //     reinitScripts();
-    // });
 </script>
