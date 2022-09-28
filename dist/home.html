@@ -15,55 +15,93 @@
 
 </head>
 <body>
-<header class="header">
+<header class="header header-white">
     <div class="container">
         <div class="header-container">
             <p>GSL Refreshing the brand</p>
-            <div class="menu">
-                <ul>
-                    <li><a href="" class="active">Home</a></li>
-                    <li><a href="">Promise</a></li>
-                    <li><a href="">Visual Language</a></li>
-                    <li><a href="">Website</a></li>
-                    <li><a href="">Vision</a></li>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="menu-cont">
+
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="" class="active">Home</a></li>
+                        <li><a href="">Promise</a></li>
+                        <li><a href="">Visual Language</a></li>
+                        <li><a href="">Website</a></li>
+                        <li><a href="">Vision</a></li>
+                    </ul>
+                </div>
+                <ul class="soc">
+                    <li>
+                        <a href="">
+                            <img src="./img/soc-i1.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/soc-i2.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/soc-i3.svg" alt="">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </header>
 
+<section class="first-section">
+    <section class="hero-home">
+        <div class="hero-home__bg">
+            <div class="img">
+                <img class="lazyload" data-src="./img/hero-i1.jpg" alt="">
+            </div>
 
-<section class="hero-home">
-    <div class="hero-home__bg">
-        <div class="img">
-            <img class="lazyload" data-src="./img/hero-i1.jpg" alt="">
-        </div>
+            <div class="video">
 
-        <div class="video">
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="big-title">TIME TO <br>
+                <strong>SHINE BRIGHTER</strong></h1>
+            <div class="play">
+                <img src="./img/play-btn.svg" alt="">
+
+            </div>
+            <div class="scroll-rev">
+                <p>Scroll to reveal</p>
+                <img src="./img/arr-down1.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="reveal-hand">
+        <div class="star-big">
+            <img src="./img/star-big.svg" alt="">
+        </div>
+        <div class="bg-hand">
+            <div class="trigger">
+
+            </div>
+            <div class="trigger2">
+
+            </div>
+            <img class="lazyload" data-src="./img/hand-img.png" alt="">
+        </div>
+        <div class="container">
 
         </div>
-    </div>
-    <div class="container">
-        <h1 class="big-title">TIME TO <br>
-            <strong>SHINE BRIGHTER</strong></h1>
-        <div class="play">
-            <img src="./img/play-btn.svg" alt="">
-
-        </div>
-        <div class="scroll-rev">
-            <p>Scroll to reveal</p>
-            <img src="./img/arr-down1.svg" alt="">
-        </div>
-    </div>
+    </section>
 </section>
-<section class="reveal-hand">
-    <div class="bg-hand">
-        <img class="lazyload" data-src="./img/hand-img.png" alt="">
-    </div>
-    <div class="container">
 
-    </div>
-</section>
 
 <section class="skills">
     <div class="skills-top">
@@ -80,6 +118,9 @@
                             Intra-Asia Trades</p>
 
                     </div>
+                    <div class="btn btn--vid mob-only">
+                        Watch Mr. Hoffmann's statement
+                    </div>
                 </div>
                 <div class="text-skills">
                     <span>We wanted to show the difference</span>
@@ -92,7 +133,7 @@
                         sound projected something else, something that it is not us. We decided to change that as well,
                         in order to be unified in every front. I welcome you to see what we’ve done and will be happy to
                         hear your thoughts on it.</p>
-                    <div class="btn btn--vid">
+                    <div class="btn btn--vid desk-only">
                         Watch Mr. Hoffmann's statement
                     </div>
                 </div>
@@ -337,8 +378,11 @@
                 <div class="img">
                     <img class="lazyload" data-src="./img/mr-4.png" alt="">
                 </div>
-                <div class="img pen">
+                <div class="img pen desk-only">
                     <img class="lazyload" data-src="./img/mr-5.png" alt="">
+                </div>
+                <div class="img pen mob-only">
+                    <img class="lazyload" data-src="./img/mr-6.png" alt="">
                 </div>
             </div>
         </div>
@@ -460,8 +504,11 @@
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.3/smooth-scrollbar.js"></script>
 
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>-->
+
 <script type="text/javascript" class="main-script" src="./js/scripts.min.js"></script>
-<script type="module" class="" src="./libs/modulegrid.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
 
