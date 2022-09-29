@@ -243,8 +243,8 @@ img.lazyload, video.lazyload {
 
 @-webkit-keyframes fade-up {
   from {
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%); }
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -252,8 +252,8 @@ img.lazyload, video.lazyload {
 
 @keyframes fade-up {
   from {
-    -webkit-transform: translateY(10%);
-            transform: translateY(10%); }
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -1218,6 +1218,7 @@ p {
            object-fit: cover; }
 
 .text-skills {
+  position: relative;
   width: 100%;
   max-width: 45.6250vw;
   margin-left: 4.7396vw;
@@ -1234,6 +1235,36 @@ p {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
+  .text-skills .trigger {
+    top: -10.4479vw;
+    position: absolute; }
+  .text-skills::before {
+    position: absolute;
+    top: -2.4479vw;
+    left: 50%;
+    width: 2.4479vw;
+    height: 2.4479vw;
+    -webkit-transform: translate(-50%, -100%) scale(1.2);
+        -ms-transform: translate(-50%, -100%) scale(1.2);
+            transform: translate(-50%, -100%) scale(1.2);
+    display: inline-block;
+    content: '';
+    opacity: 0;
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
+    transition: opacity 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
+    -o-transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
+    background: url("../img/star-white.svg") no-repeat center/100%; }
+  .text-skills.active::before {
+    opacity: 1;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    -webkit-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%); }
   .text-skills span {
     font-style: normal;
     font-weight: 700;
@@ -1255,7 +1286,7 @@ p {
   .skills-bot .parall {
     position: absolute;
     left: 0;
-    top: calc(100% - 18.5938vw);
+    top: 140%;
     width: 5.9896vw;
     height: 69.6875vw; }
     .skills-bot .parall img {
@@ -1288,13 +1319,6 @@ p {
           transform: translate(0, -16.0938vw); }
 
 .single-skill-card {
-  -webkit-filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.1));
-  border-radius: 1.6667vw;
-  background: #fff;
-  padding: 3.1250vw 1.3021vw;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1315,6 +1339,30 @@ p {
     -webkit-transform: translate(0, 12.6042vw);
         -ms-transform: translate(0, 12.6042vw);
             transform: translate(0, 12.6042vw); }
+  .single-skill-card .single-skill-card__cont {
+    -webkit-filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.1));
+    border-radius: 1.6667vw;
+    background: #fff;
+    padding: 3.1250vw 1.3021vw;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: inherit;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   .single-skill-card .img {
     width: 100%;
     padding: 0 0.8333vw;
@@ -1330,8 +1378,29 @@ p {
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    position: relative; }
+    .single-skill-card .img::after {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0.8333vw;
+      right: 0.8333vw;
+      height: 100%;
+      background: var(--after) no-repeat center/100%;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s ease;
+      -o-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease; }
+    .single-skill-card .img.hide img {
+      opacity: 0; }
+    .single-skill-card .img.hide::after {
+      opacity: 1; }
     .single-skill-card .img img {
+      -webkit-transition: opacity 0.3s ease;
+      -o-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease;
       width: 100%;
       max-width: 16.4583vw;
       height: 100%;
@@ -1369,6 +1438,53 @@ p {
       text-align: center;
       color: #001524; }
 
+.promises-height {
+  height: calc(100vh + (32vh * var(--amounts)));
+  width: 100%;
+  position: relative; }
+  .promises-height .trigger-b {
+    position: absolute;
+    top: 42.7vh; }
+  .promises-height .triggers-blocks {
+    z-index: 2; }
+  .promises-height .trigg {
+    height: 2px;
+    width: 100%;
+    color: red;
+    position: absolute;
+    z-index: 3; }
+    .promises-height .trigg:nth-child(1) {
+      top: calc(52.7vh + (26vh * (1 - 1))); }
+    .promises-height .trigg:nth-child(2) {
+      top: calc(52.7vh + (26vh * (2 - 1))); }
+    .promises-height .trigg:nth-child(3) {
+      top: calc(52.7vh + (26vh * (3 - 1))); }
+    .promises-height .trigg:nth-child(4) {
+      top: calc(52.7vh + (26vh * (4 - 1))); }
+    .promises-height .trigg:nth-child(5) {
+      top: calc(52.7vh + (26vh * (5 - 1))); }
+    .promises-height .trigg:nth-child(6) {
+      top: calc(52.7vh + (26vh * (6 - 1))); }
+    .promises-height .trigg:nth-child(7) {
+      top: calc(52.7vh + (26vh * (7 - 1))); }
+    .promises-height .trigg:nth-child(8) {
+      top: calc(52.7vh + (26vh * (8 - 1))); }
+  .promises-height .trigger-s {
+    position: absolute;
+    top: 0; }
+  .promises-height .star-mov {
+    width: 2.8229vw;
+    height: 2.8229vw;
+    position: absolute;
+    top: -29.8vw;
+    left: 29.3vw;
+    opacity: 0; }
+    .promises-height .star-mov.hide {
+      opacity: 1; }
+    .promises-height .star-mov img {
+      width: auto;
+      height: 100%; }
+
 .promises {
   width: 100%;
   display: -webkit-box;
@@ -1384,7 +1500,9 @@ p {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 4.5833vw 0;
   height: 100vh;
   margin-top: -11vw; }
@@ -1396,7 +1514,7 @@ p {
     color: #FFFFFF; }
   .promises .big-title {
     position: absolute;
-    top: 61%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
@@ -1407,6 +1525,24 @@ p {
     line-height: 2.0313vw;
     color: #fff;
     font-weight: 700; }
+    .promises .big-title::before {
+      opacity: 0;
+      width: 1.8229vw;
+      height: 1.8229vw;
+      display: inline-block;
+      position: absolute;
+      content: '';
+      top: -0.8vw;
+      left: 50%;
+      -webkit-transition: opacity 0.3s ease;
+      -o-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease;
+      -webkit-transform: translate(-50%, -100%);
+          -ms-transform: translate(-50%, -100%);
+              transform: translate(-50%, -100%);
+      background: url("../img/star-vector.svg") no-repeat center/100%; }
+    .promises .big-title.visible::before {
+      opacity: 1; }
     .promises .big-title strong {
       font-weight: 900;
       font-size: 8.7500vw;
@@ -1440,9 +1576,9 @@ p {
   position: absolute;
   width: 100%;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease; }
+  -webkit-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
   .single-promises.visible {
     opacity: 1; }
   .single-promises span {
@@ -1475,28 +1611,28 @@ p {
   .single-promises:nth-child(2) {
     max-width: 18.0208vw;
     width: 100%;
-    top: 17.3875vw;
+    top: 11.3875vw;
     left: 19.4188vw; }
   .single-promises:nth-child(3) {
     max-width: 18.0208vw;
     width: 100%;
-    top: 20.221vw;
+    top: 15.221vw;
     right: 2.3875vw; }
   .single-promises:nth-child(4) {
     max-width: 20.9896vw;
     width: 100%;
-    top: 42.75042vw;
+    top: 34.75042vw;
     right: 14.9438vw; }
   .single-promises:nth-child(5) {
     max-width: 16.0938vw;
     width: 100%;
-    top: 46.3979vw;
+    top: 32.3979vw;
     left: 3.2088vw; }
   .single-promises:nth-child(6) {
     max-width: 24.4792vw;
     width: 100%;
     bottom: 10.1563vw;
-    left: 17.6146vw; }
+    left: 20.6146vw; }
 
 .logo-section {
   width: 100%;
@@ -1609,11 +1745,12 @@ p {
 .colors-section {
   width: 100%;
   padding: 4.0104vw 0 6.8750vw;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .colors-section .parall {
-    top: calc(100% - 6.8750vw);
+    top: -130vh;
     right: 0;
-    position: absolute;
+    position: fixed;
     width: 6.0938vw;
     height: 68.5417vw; }
     .colors-section .parall img {
@@ -1958,11 +2095,11 @@ p {
     border-radius: 50%;
     height: 94vw;
     left: 50%;
-    top: 16.8750vw;
+    top: 40%;
     position: absolute;
-    -webkit-transform: translate(-50%, 15%);
-        -ms-transform: translate(-50%, 15%);
-            transform: translate(-50%, 15%);
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     -webkit-transition: -webkit-transform 1.2s ease;
     transition: -webkit-transform 1.2s ease;
     -o-transition: transform 1.2s ease;
@@ -1975,9 +2112,9 @@ p {
     right: 0;
     height: 1px; }
     .website .trigger-round.anim.done ~ .round {
-      -webkit-transform: translate(-50%, -6%);
-          -ms-transform: translate(-50%, -6%);
-              transform: translate(-50%, -6%); }
+      -webkit-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+              transform: translate(-50%, 0); }
 
 .vision {
   width: 100%;
@@ -1985,6 +2122,30 @@ p {
   background: linear-gradient(97.57deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);
   position: relative;
   padding: 13.2292vw 0 12.2396vw; }
+  .vision .trg-1 {
+    position: absolute;
+    top: calc(100% * 0.6 * 0.3);
+    height: 2px;
+    width: 100px;
+    right: 0; }
+  .vision .trg-2 {
+    position: absolute;
+    top: calc((100% * 0.6 * 0.3) * 2);
+    height: 2px;
+    width: 100px;
+    right: 0; }
+  .vision .star-planet {
+    width: 2.8854vw;
+    height: 2.8854vw;
+    position: absolute;
+    bottom: 41vw;
+    right: 22vw;
+    z-index: 4;
+    -webkit-filter: blur(8px);
+            filter: blur(8px); }
+    .vision .star-planet img {
+      width: 100%;
+      height: 100%; }
   .vision .container {
     z-index: 2;
     position: relative; }
@@ -2053,7 +2214,7 @@ p {
   width: 100%;
   padding: 1.2500vw 0 1.1979vw;
   background: #001524;
-  z-index: 2; }
+  z-index: 5; }
 
 .footer-cont {
   width: 100%;
@@ -2267,11 +2428,12 @@ p {
   .single-skill-card {
     width: 100%;
     min-height: 136.9444vw;
-    max-width: none;
-    -webkit-filter: drop-shadow(0px 24.1595px 24.1595px rgba(0, 0, 0, 0.1));
-            filter: drop-shadow(0px 24.1595px 24.1595px rgba(0, 0, 0, 0.1));
-    border-radius: 7.2222vw;
-    padding: 11.3889vw 8.3333vw 8.3333vw; }
+    max-width: none; }
+    .single-skill-card .single-skill-card__cont {
+      -webkit-filter: drop-shadow(0px 24.1595px 24.1595px rgba(0, 0, 0, 0.1));
+              filter: drop-shadow(0px 24.1595px 24.1595px rgba(0, 0, 0, 0.1));
+      border-radius: 7.2222vw;
+      padding: 11.3889vw 8.3333vw 8.3333vw; }
     .single-skill-card .img {
       padding: 0;
       height: 44.7222vw;
