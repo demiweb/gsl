@@ -17,27 +17,25 @@
 <body>
 //= details/header.html
 
-<section class="first-section">
+<section id="home" class="section first-section">
     <section class="hero-home">
         <div class="hero-home__bg">
             <div class="img">
                 <img class="lazyload" data-src="./img/hero-i1.jpg" alt="">
             </div>
 
-            <div class="video">
-
-            </div>
         </div>
         <div class="container">
             <h1 class="big-title">TIME TO <br>
                 <strong>SHINE BRIGHTER</strong></h1>
-            <div class="play">
-                <img src="./img/play-btn.svg" alt="">
 
-            </div>
             <div class="scroll-rev">
                 <p>Scroll to reveal</p>
-                <img src="./img/arr-down1.svg" alt="">
+                <div class="scr">
+                    <img src="./img/arr-b.svg" alt="">
+                    <img src="./img/arr-b.svg" alt="">
+                    <img src="./img/arr-b.svg" alt="">
+                </div>
             </div>
         </div>
     </section>
@@ -61,7 +59,7 @@
 </section>
 
 
-<section class="skills">
+<section id="promise" class="section skills">
     <div class="skills-top">
         <div class="container">
             <div class="skills-top__cont">
@@ -76,7 +74,7 @@
                             Intra-Asia Trades</p>
 
                     </div>
-                    <div class="btn btn--vid mob-only">
+                    <div class="btn btn--vid mob-only video-js" data-src="./img/flag-vid.mp4" data-poster="">
                         Watch Mr. Hoffmann's statement
                     </div>
                 </div>
@@ -94,7 +92,7 @@
                         sound projected something else, something that it is not us. We decided to change that as well,
                         in order to be unified in every front. I welcome you to see what we’ve done and will be happy to
                         hear your thoughts on it.</p>
-                    <div class="btn btn--vid desk-only">
+                    <div class="btn btn--vid desk-only video-js" data-src="./img/flag-vid.mp4" data-poster="">
                         Watch Mr. Hoffmann's statement
                     </div>
                 </div>
@@ -274,115 +272,120 @@
 
 </section>
 
-<section class="logo-section">
-    <div class="container">
-        <div class="logo-section__cont">
-            <span>Logo</span>
-            <p>The needed evolution was made on the logo, while keeping the flagged star as a key element in the logo,
-                but making it up-to-date</p>
-            <div class="logo-blocks">
-                <div class="logo-video anim" data-anim-delay="0" data-anim-duration="760"
-                     data-anim="fade">
+<section id="visual" class="section">
 
-                </div>
-                <div class="logo-diff">
-                    <div class="logo-block anim" data-anim-delay="0" data-anim-duration="760"
+    <section  class="section logo-section">
+        <div class="container">
+            <div class="logo-section__cont">
+                <span>Logo</span>
+                <p>The needed evolution was made on the logo, while keeping the flagged star as a key element in the logo,
+                    but making it up-to-date</p>
+                <div class="logo-blocks">
+                    <div class="logo-video anim" data-anim-delay="0" data-anim-duration="760"
                          data-anim="fade">
-                        <div class="img">
-                            <img src="./img/logo-old.svg" alt="">
-                        </div>
-                        <p>Before</p>
+                        <video src="./img/flag-vid.mp4" muted autoplay playsinline loop poster type="video/mp4"></video>
+
                     </div>
-                    <div class="logo-block anim" data-anim-delay="0" data-anim-duration="760"
-                         data-anim="fade">
-                        <div class="img">
-                            <img src="./img/logo-new.svg" alt="">
+                    <div class="logo-diff">
+                        <div class="logo-block anim" data-anim-delay="0" data-anim-duration="760"
+                             data-anim="fade">
+                            <div class="img">
+                                <img src="./img/logo-old.svg" alt="">
+                            </div>
+                            <p>Before</p>
                         </div>
-                        <p>After</p>
+                        <div class="logo-block anim" data-anim-delay="0" data-anim-duration="760"
+                             data-anim="fade">
+                            <div class="img">
+                                <img src="./img/logo-new.svg" alt="">
+                            </div>
+                            <p>After</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</section>
-<section class="colors-section">
-    <div class="paral-2 parall">
-        <img src="./img/Fond_Pres-1.svg" alt="">
-    </div>
-    <div class="container">
-        <div class="colors-cont counting-delay">
+    </section>
+    <section class="colors-section">
+        <div class="paral-2 parall">
+            <img src="./img/Fond_Pres-1.svg" alt="">
+        </div>
+        <div class="container">
+            <div class="colors-cont counting-delay">
             <span class="anim" data-anim-delay="0" data-anim-duration="760"
                   data-anim="fade">Color</span>
-            <p class="anim" data-anim-delay="0" data-anim-duration="760"
-               data-anim="fade">The original brand colors were adjusted & modified, to be in line with the rebranding
-                procedure, among it
-                - to be more iconic.</p>
-            <p class="anim" data-anim-delay="0" data-anim-duration="760"
-               data-anim="fade">New sub-colors were added, and a range of gradients was defined, to answer the new
-                upcoming needs that
-                the brand will face.</p>
-            <div class="colors-list anim" data-anim-delay="0" data-anim-duration="760"
-                 data-anim="fade">
+                <p class="anim" data-anim-delay="0" data-anim-duration="760"
+                   data-anim="fade">The original brand colors were adjusted & modified, to be in line with the rebranding
+                    procedure, among it
+                    - to be more iconic.</p>
+                <p class="anim" data-anim-delay="0" data-anim-duration="760"
+                   data-anim="fade">New sub-colors were added, and a range of gradients was defined, to answer the new
+                    upcoming needs that
+                    the brand will face.</p>
+                <div class="colors-list anim" data-anim-delay="0" data-anim-duration="760"
+                     data-anim="fade">
 
-                <div class="single-color anim" style="--bg: #001524">
-                    <p>Deep Ocean</p>
-                </div>
-                <div class="single-color anim" style="--bg: #133D60">
-                    <p>Cobalt Marine</p>
-                </div>
-                <div class="single-color anim" style="--bg: #007B9A">
-                    <p>Shallow Waters</p>
-                </div>
-                <div class="single-color anim" style="--bg: #FDC200">
-                    <p>Golden Coast</p>
-                </div>
-                <div class="single-color anim" style="--bg: #CA4D37">
-                    <p>Crimson Twilight</p>
-                </div>
-                <div class="single-color anim"
-                     style="--bg: linear-gradient(97.57deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);">
-                    <p>Blue Gradient</p>
-                </div>
-                <div class="single-color anim"
-                     style="--bg: linear-gradient(277.97deg, #CF5734 0.92%, #D86E2D 13.51%, #F2AD19 59.59%, #FAC013 93.01%);">
-                    <p>Gold Gradient</p>
-                </div>
+                    <div class="single-color anim" style="--bg: #001524">
+                        <p>Deep Ocean</p>
+                    </div>
+                    <div class="single-color anim" style="--bg: #133D60">
+                        <p>Cobalt Marine</p>
+                    </div>
+                    <div class="single-color anim" style="--bg: #007B9A">
+                        <p>Shallow Waters</p>
+                    </div>
+                    <div class="single-color anim" style="--bg: #FDC200">
+                        <p>Golden Coast</p>
+                    </div>
+                    <div class="single-color anim" style="--bg: #CA4D37">
+                        <p>Crimson Twilight</p>
+                    </div>
+                    <div class="single-color anim"
+                         style="--bg: linear-gradient(97.57deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);">
+                        <p>Blue Gradient</p>
+                    </div>
+                    <div class="single-color anim"
+                         style="--bg: linear-gradient(277.97deg, #CF5734 0.92%, #D86E2D 13.51%, #F2AD19 59.59%, #FAC013 93.01%);">
+                        <p>Gold Gradient</p>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="merch-section">
-    <div class="container">
-        <div class="merch-cont counting-delay">
+    <section class="merch-section">
+        <div class="container">
+            <div class="merch-cont counting-delay">
             <span class="anim" data-anim-delay="0" data-anim-duration="760"
                   data-anim="fade">Merchandise</span>
-            <div class="merch-list">
-                <div class="img">
-                    <img class="lazyload" data-src="./img/mr-1.png" alt="">
-                </div>
-                <div class="img">
-                    <img class="lazyload" data-src="./img/mr-2.png" alt="">
-                </div>
-                <div class="img">
-                    <img class="lazyload" data-src="./img/mr-3.png" alt="">
-                </div>
-                <div class="img">
-                    <img class="lazyload" data-src="./img/mr-4.png" alt="">
-                </div>
-                <div class="img pen desk-only">
-                    <img class="lazyload" data-src="./img/mr-5.png" alt="">
-                </div>
-                <div class="img pen mob-only">
-                    <img class="lazyload" data-src="./img/mr-6.png" alt="">
+                <div class="merch-list">
+                    <div class="img">
+                        <img class="lazyload" data-src="./img/mr-1.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="./img/mr-2.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="./img/mr-3.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="./img/mr-4.png" alt="">
+                    </div>
+                    <div class="img pen desk-only">
+                        <img class="lazyload" data-src="./img/mr-5.png" alt="">
+                    </div>
+                    <div class="img pen mob-only">
+                        <img class="lazyload" data-src="./img/mr-6.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
-<section class="website">
+
+<section id="website" class="section website">
     <div class="container counting-delay">
         <div class="img anim" data-anim-delay="0" data-anim-duration="760"
              data-anim="fade">
@@ -403,7 +406,7 @@
     </div>
 </section>
 
-<section class="vision">
+<section id="vision" class="section vision">
     <div class="trg-1"></div>
     <div class="trg-2"></div>
     <div class="container">
@@ -431,6 +434,18 @@
 
     </div>
 </section>
+
+<div class="modal-window video-modal">
+    <div class="modal-container">
+        <div class="close-video">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="video-cont">
+            <video src=""   playsinline loop poster type="video/mp4" controls></video>
+        </div>
+    </div>
+</div>
 //= details/footer.html
 //= details/scripts.html
 
