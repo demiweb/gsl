@@ -2448,9 +2448,11 @@ p {
     height: 100%; }
 
 @media screen and (max-width: 920px) {
-  .scroll-rev .scr img {
-    width: 4.7222vw !important;
-    height: 2.7778vw !important; }
+  .scroll-rev {
+    pointer-events: auto; }
+    .scroll-rev .scr img {
+      width: 4.7222vw !important;
+      height: 2.7778vw !important; }
   .modal-window {
     padding: 20px; }
   .close-video {

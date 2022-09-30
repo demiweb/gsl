@@ -584,10 +584,13 @@ var videoModal = [...document.querySelectorAll('.video-modal')];
 function controlVideo() {
     if (videoCont.length) {
         videoCont.forEach((btn, k) => {
+
             var vid = btn;
             var srcVid = vid.dataset.src;
             var posterVid = vid.dataset.poster;
+
             var modVid = videoModal[0].querySelector('video');
+
             var modSrc = modVid.src;
             var modPoster = modVid.poster;
             // console.log(srcVid);

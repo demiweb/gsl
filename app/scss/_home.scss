@@ -1408,11 +1408,14 @@
 }
 
 @media screen and (max-width: 920px) {
+
   .scroll-rev {
+    pointer-events: auto;
     .scr {
       img {
         width: 4.7222vw !important;
         height: 2.7778vw !important;
+
       }
     }
   }
