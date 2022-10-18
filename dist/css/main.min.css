@@ -395,8 +395,8 @@ img.lazyload, video.lazyload {
 .is-loaded {
   opacity: 0;
   visibility: visible;
-  -webkit-animation: faddingImgAnim 0.5s ease;
-          animation: faddingImgAnim 0.5s ease; }
+  -webkit-animation: faddingImgAnim 1.3s ease;
+          animation: faddingImgAnim 1.3s ease; }
 
 @-webkit-keyframes faddingImgAnim {
   0% {
@@ -645,13 +645,16 @@ p {
 
 .first-section {
   width: 100%;
-  height: 200vh; }
+  height: 140vh; }
   .first-section .hero-home {
     position: -webkit-sticky;
     position: sticky;
     top: 0; }
   .first-section .reveal-hand {
-    margin-top: 0; }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-top: -60vh; }
 
 .header-container {
   width: 100%;
@@ -716,7 +719,10 @@ p {
   z-index: 1; }
   .star-big img {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    -webkit-transition: all 0.01s ease-in-out !important;
+    -o-transition: all 0.01s ease-in-out !important;
+    transition: all 0.01s ease-in-out !important; }
 
 .burger {
   -webkit-transition: opacity 0.3s ease;
@@ -977,12 +983,16 @@ p {
       .hero-home .container .play img {
         width: 100%;
         height: 100%; }
+  .hero-home .big-title {
+    -webkit-transition: text-shadow 0.3s ease;
+    -o-transition: text-shadow 0.3s ease;
+    transition: text-shadow 0.3s ease; }
   .hero-home .hero-home__bg {
     opacity: 1;
     pointer-events: auto;
-    -webkit-transition: opacity 0.4s linear;
-    -o-transition: opacity 0.4s linear;
-    transition: opacity 0.4s linear; }
+    -webkit-transition: opacity 1.3s linear;
+    -o-transition: opacity 1.3s linear;
+    transition: opacity 1.3s linear; }
   .hero-home .container .play {
     opacity: 1;
     pointer-events: auto;
@@ -998,9 +1008,11 @@ p {
   .hero-home.reveal .hero-home__bg {
     opacity: 0;
     pointer-events: none;
-    -webkit-transition: opacity 0.5s linear;
-    -o-transition: opacity 0.5s linear;
-    transition: opacity 0.5s linear; }
+    -webkit-transition: opacity 0.8s linear;
+    -o-transition: opacity 0.8s linear;
+    transition: opacity 0.8s linear; }
+  .hero-home.reveal .big-title {
+    text-shadow: none; }
   .hero-home.reveal .container .play {
     opacity: 0;
     pointer-events: none;
@@ -1018,9 +1030,9 @@ p {
   width: 100%;
   height: 100vh;
   position: relative;
-  -webkit-transition: opacity 0.5s ease;
-  -o-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
+  -webkit-transition: opacity 1.5s ease;
+  -o-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
   opacity: 0; }
   .reveal-hand.reveal {
     opacity: 1; }
@@ -1040,7 +1052,7 @@ p {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  z-index: 2; }
+  z-index: 1; }
   .bg-hand img {
     width: 100%;
     height: 100%;
@@ -1074,7 +1086,8 @@ p {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0); }
+          transform: translate(-50%, 0);
+  cursor: pointer; }
   .scroll-rev p {
     font-style: normal;
     font-weight: 500;
@@ -1102,14 +1115,44 @@ p {
       height: 1.0417vw;
       opacity: 0; }
       .scroll-rev .scr img:nth-child(1) {
-        -webkit-animation: scrDown 2s linear infinite;
-                animation: scrDown 2s linear infinite; }
+        -webkit-animation: scrDown4 4s linear infinite;
+                animation: scrDown4 4s linear infinite;
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s; }
       .scroll-rev .scr img:nth-child(2) {
-        -webkit-animation: scrDown2 2s linear infinite;
-                animation: scrDown2 2s linear infinite; }
+        -webkit-animation: scrDown4 4s linear infinite;
+                animation: scrDown4 4s linear infinite;
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s; }
       .scroll-rev .scr img:nth-child(3) {
-        -webkit-animation: scrDown3 2s linear infinite;
-                animation: scrDown3 2s linear infinite; }
+        -webkit-animation: scrDown4 4s linear infinite;
+                animation: scrDown4 4s linear infinite;
+        -webkit-animation-delay: 0.9s;
+                animation-delay: 0.9s; }
+
+@-webkit-keyframes scrDown4 {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 0; }
+  40% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes scrDown4 {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 0; }
+  40% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 @-webkit-keyframes scrDown {
   0% {
@@ -1331,7 +1374,7 @@ p {
       -ms-flex-pack: start;
           justify-content: flex-start; }
   .text-skills .trigger {
-    top: -10.4479vw;
+    top: -5.4479vw;
     position: absolute; }
   .text-skills::before {
     position: absolute;
@@ -1524,14 +1567,52 @@ p {
       text-align: center;
       color: #133D60;
       display: inline-block;
-      margin-bottom: 2.8125vw; }
+      margin-bottom: 2.8125vw;
+      opacity: 0;
+      -webkit-transform: translate(0, 2vw);
+          -ms-transform: translate(0, 2vw);
+              transform: translate(0, 2vw);
+      -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+      transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+      -o-transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease; }
     .single-skill-card .text p {
       font-style: normal;
       font-weight: 400;
       font-size: 0.9375vw;
       line-height: 1.3021vw;
       text-align: center;
-      color: #001524; }
+      color: #001524;
+      opacity: 0;
+      -webkit-transform: translate(0, 2vw);
+          -ms-transform: translate(0, 2vw);
+              transform: translate(0, 2vw);
+      -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+      transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+      -o-transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease; }
+  .single-skill-card .single-skill-card__cont.done .text span {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    -o-transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease; }
+  .single-skill-card .single-skill-card__cont.done .text p {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    -o-transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease; }
 
 .promises-height {
   height: calc(100vh + (32vh * var(--amounts)));
@@ -1566,19 +1647,26 @@ p {
       top: calc(52.7vh + (26vh * (8 - 1))); }
   .promises-height .trigger-s {
     position: absolute;
-    top: 0; }
+    top: -17.9vh; }
   .promises-height .star-mov {
     width: 2.8229vw;
     height: 2.8229vw;
     position: absolute;
     top: -29.8vw;
     left: 29.3vw;
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transition: all 0.01s linear !important;
+    -o-transition: all 0.01s linear !important;
+    transition: all 0.01s linear !important;
+    direction: rtl; }
     .promises-height .star-mov.hide {
       opacity: 1; }
     .promises-height .star-mov img {
       width: auto;
-      height: 100%; }
+      height: 100%;
+      -webkit-transition: all 0.01s ease-in !important;
+      -o-transition: all 0.01s ease-in !important;
+      transition: all 0.01s ease-in !important; }
 
 .promises {
   width: 100%;
@@ -1716,7 +1804,7 @@ p {
   .single-promises:nth-child(4) {
     max-width: 20.9896vw;
     width: 100%;
-    top: 34.75042vw;
+    top: 36.55042vw;
     right: 14.9438vw; }
   .single-promises:nth-child(5) {
     max-width: 16.0938vw;
@@ -2117,20 +2205,20 @@ p {
       -o-object-fit: cover;
          object-fit: cover; }
     .merch-list .img:nth-child(1) img {
-      -webkit-animation-delay: 0.2s !important;
-              animation-delay: 0.2s !important; }
-    .merch-list .img:nth-child(2) img {
-      -webkit-animation-delay: 0.5s !important;
-              animation-delay: 0.5s !important; }
-    .merch-list .img:nth-child(3) img {
-      -webkit-animation-delay: 1s !important;
-              animation-delay: 1s !important; }
-    .merch-list .img:nth-child(4) img {
       -webkit-animation-delay: 0.7s !important;
               animation-delay: 0.7s !important; }
+    .merch-list .img:nth-child(2) img {
+      -webkit-animation-delay: 0.9s !important;
+              animation-delay: 0.9s !important; }
+    .merch-list .img:nth-child(3) img {
+      -webkit-animation-delay: 0.9s !important;
+              animation-delay: 0.9s !important; }
+    .merch-list .img:nth-child(4) img {
+      -webkit-animation-delay: 1.3s !important;
+              animation-delay: 1.3s !important; }
     .merch-list .img:nth-child(5) img {
-      -webkit-animation-delay: 1.4s !important;
-              animation-delay: 1.4s !important; }
+      -webkit-animation-delay: 1.5s !important;
+              animation-delay: 1.5s !important; }
 
 .website {
   width: 100%;
@@ -2161,6 +2249,9 @@ p {
       display: -ms-flexbox;
       display: flex;
       margin-bottom: 1.4063vw; }
+      .website .container .img.anim {
+        -webkit-animation-delay: 0;
+                animation-delay: 0; }
       .website .container .img img {
         width: 100%;
         height: 100%; }
@@ -2235,12 +2326,212 @@ p {
     position: absolute;
     bottom: 41vw;
     right: 22vw;
-    z-index: 4;
+    z-index: 1;
     -webkit-filter: blur(8px);
-            filter: blur(8px); }
+            filter: blur(8px);
+    -webkit-transition: all 0.01s linear, opacity 0.3s ease !important;
+    -o-transition: all 0.01s linear, opacity 0.3s ease !important;
+    transition: all 0.01s linear, opacity 0.3s ease !important;
+    opacity: 0; }
+    .vision .star-planet.active {
+      opacity: 1;
+      z-index: 4; }
+      .vision .star-planet.active img {
+        margin-top: 0; }
     .vision .star-planet img {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      margin-top: 4vw;
+      -webkit-transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
+      -o-transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
+      transition: all 0.01s ease-in-out, margin-top 0.4s linear !important; }
+  .vision .stars-planets .star-planet ~ div {
+    opacity: 0 !important;
+    -webkit-transition: opacity 0.5s linear !important;
+    -o-transition: opacity 0.5s linear !important;
+    transition: opacity 0.5s linear !important;
+    margin-top: 4vw; }
+  .vision .stars-planets .star-planet.active ~ div {
+    opacity: 1 !important;
+    margin-top: 4vw; }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(2) {
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0);
+              filter: blur(0); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(3) {
+      opacity: 0.9 !important;
+      -webkit-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+              transform: scale(0.7); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(4) {
+      opacity: 0.8 !important;
+      -webkit-transform: scale(0.65);
+          -ms-transform: scale(0.65);
+              transform: scale(0.65); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(5) {
+      opacity: 0.7 !important;
+      -webkit-transform: scale(0.6);
+          -ms-transform: scale(0.6);
+              transform: scale(0.6); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(6) {
+      opacity: 0.6 !important;
+      -webkit-transform: scale(0.55);
+          -ms-transform: scale(0.55);
+              transform: scale(0.55); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(7) {
+      opacity: 0.5 !important;
+      -webkit-transform: scale(0.5);
+          -ms-transform: scale(0.5);
+              transform: scale(0.5); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(8) {
+      opacity: 0.4 !important;
+      -webkit-transform: scale(0.45);
+          -ms-transform: scale(0.45);
+              transform: scale(0.45); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(9) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.4);
+          -ms-transform: scale(0.4);
+              transform: scale(0.4); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(10) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.35);
+          -ms-transform: scale(0.35);
+              transform: scale(0.35); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(11) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.3);
+          -ms-transform: scale(0.3);
+              transform: scale(0.3); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(12) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.25);
+          -ms-transform: scale(0.25);
+              transform: scale(0.25); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(13) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.2);
+          -ms-transform: scale(0.2);
+              transform: scale(0.2); }
+    .vision .stars-planets .star-planet.active ~ div:nth-child(14) {
+      opacity: 0.3 !important;
+      -webkit-transform: scale(0.15);
+          -ms-transform: scale(0.15);
+              transform: scale(0.15); }
+  .vision .stars-planets div:not(.star-planet) {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 3;
+    background: url("../img/star-vector.svg") no-repeat center/100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .vision .stars-planets div:not(.star-planet):nth-child(n):not(:nth-child(2)) {
+      -webkit-filter: blur(20px) !important;
+              filter: blur(20px) !important; }
+    .vision .stars-planets div:not(.star-planet):nth-child(2) {
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0);
+              filter: blur(0); }
+    .vision .stars-planets div:not(.star-planet):nth-child(3) {
+      opacity: 0.9;
+      -webkit-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+              transform: scale(0.7); }
+    .vision .stars-planets div:not(.star-planet):nth-child(4) {
+      opacity: 0.8;
+      -webkit-transform: scale(0.65);
+          -ms-transform: scale(0.65);
+              transform: scale(0.65); }
+    .vision .stars-planets div:not(.star-planet):nth-child(5) {
+      opacity: 0.7;
+      -webkit-transform: scale(0.6);
+          -ms-transform: scale(0.6);
+              transform: scale(0.6); }
+    .vision .stars-planets div:not(.star-planet):nth-child(6) {
+      opacity: 0.6;
+      -webkit-transform: scale(0.55);
+          -ms-transform: scale(0.55);
+              transform: scale(0.55); }
+    .vision .stars-planets div:not(.star-planet):nth-child(7) {
+      opacity: 0.5;
+      -webkit-transform: scale(0.5);
+          -ms-transform: scale(0.5);
+              transform: scale(0.5); }
+    .vision .stars-planets div:not(.star-planet):nth-child(8) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.45);
+          -ms-transform: scale(0.45);
+              transform: scale(0.45); }
+    .vision .stars-planets div:not(.star-planet):nth-child(9) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.4);
+          -ms-transform: scale(0.4);
+              transform: scale(0.4); }
+    .vision .stars-planets div:not(.star-planet):nth-child(10) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.35);
+          -ms-transform: scale(0.35);
+              transform: scale(0.35); }
+    .vision .stars-planets div:not(.star-planet):nth-child(11) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.3);
+          -ms-transform: scale(0.3);
+              transform: scale(0.3); }
+    .vision .stars-planets div:not(.star-planet):nth-child(12) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.25);
+          -ms-transform: scale(0.25);
+              transform: scale(0.25); }
+    .vision .stars-planets div:not(.star-planet):nth-child(13) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.2);
+          -ms-transform: scale(0.2);
+              transform: scale(0.2); }
+    .vision .stars-planets div:not(.star-planet):nth-child(14) {
+      opacity: 0.4;
+      -webkit-transform: scale(0.15);
+          -ms-transform: scale(0.15);
+              transform: scale(0.15); }
+  .vision .stars-planets .star-planet:not(:first-child) {
+    -webkit-filter: blur(12px) !important;
+            filter: blur(12px) !important;
+    z-index: 4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .vision .stars-planets .star-planet:not(:first-child):nth-child(2) {
+      width: 20px !important;
+      height: 20px !important; }
+    .vision .stars-planets .star-planet:not(:first-child):nth-child(3) {
+      width: 16px !important;
+      height: 16px !important; }
+    .vision .stars-planets .star-planet:not(:first-child):nth-child(4) {
+      width: 12px !important;
+      height: 12px !important; }
+    .vision .stars-planets .star-planet:not(:first-child):nth-child(5) {
+      width: 10px !important;
+      height: 10px !important; }
+    .vision .stars-planets .star-planet:not(:first-child):nth-child(6) {
+      width: 9px !important;
+      height: 9px !important; }
   .vision .container {
     z-index: 2;
     position: relative; }
@@ -2283,13 +2574,15 @@ p {
         line-height: 2.0313vw;
         color: #FDC200; }
   .vision .planet {
-    z-index: 2;
+    z-index: 6;
     position: absolute;
     width: 42.5521vw;
     bottom: 0;
     right: 0;
     height: 40.9896vw;
     mix-blend-mode: luminosity; }
+    .vision .planet.active {
+      z-index: 2; }
     .vision .planet img {
       width: 100%;
       height: 100%; }
@@ -2689,10 +2982,11 @@ p {
       line-height: 6.6667vw;
       top: 47%;
       left: 51%;
-      width: 80%; }
+      width: 80%;
+      margin-top: 2.7778vw; }
       .promises .big-title strong {
         font-size: 20.8333vw;
-        line-height: 16.6667vw; }
+        line-height: 18.67vw; }
   .single-promises {
     padding-left: 11.1111vw;
     max-width: 73.3333vw !important;

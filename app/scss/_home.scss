@@ -28,12 +28,13 @@
   .big-title {
     //position: fixed;
     //top: 30vh;
+    transition: text-shadow 0.3s ease;
   }
 
   .hero-home__bg {
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.4s linear;
+    transition: opacity 1.3s linear;
   }
 
   .container {
@@ -54,7 +55,11 @@
     .hero-home__bg {
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s linear;
+      transition: opacity 0.8s linear;
+    }
+
+    .big-title {
+      text-shadow: none;
     }
 
     .container {
@@ -77,7 +82,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  transition: opacity 0.5s ease;
+  transition: opacity 1.5s ease;
   opacity: 0;
 
   &.reveal {
@@ -95,7 +100,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  z-index: 2;
+  z-index: 1;
 
   img {
     width: 100%;
@@ -125,6 +130,7 @@
   bottom: 6.4063vw;
   left: 50%;
   transform: translate(-50%, 0);
+  cursor: pointer;
 
   p {
     font-style: normal;
@@ -148,20 +154,40 @@
       opacity: 0;
 
       &:nth-child(1) {
-        animation: scrDown 2s linear infinite;
+        animation: scrDown4 4s linear infinite;
+        animation-delay: 0.3s;
       }
 
       &:nth-child(2) {
-        animation: scrDown2 2s linear infinite;
-
+        animation: scrDown4 4s linear infinite;
+        animation-delay: 0.6s;
       }
 
       &:nth-child(3) {
-        animation: scrDown3 2s linear infinite;
-
+        animation: scrDown4 4s linear infinite;
+        animation-delay: 0.9s;
       }
     }
   }
+}
+
+@keyframes scrDown4 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
 }
 
 @keyframes scrDown {
@@ -349,7 +375,7 @@
   position: relative;
 
   .trigger {
-    top: -10.4479vw;
+    top: -5.4479vw;
     position: absolute;
   }
 
@@ -527,6 +553,9 @@
       color: #133D60;
       display: inline-block;
       margin-bottom: 2.8125vw;
+      opacity: 0;
+      transform: translate(0, 2vw);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     p {
@@ -536,6 +565,27 @@
       line-height: 1.3021vw;
       text-align: center;
       color: #001524;
+      opacity: 0;
+      transform: translate(0, 2vw);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  }
+
+  .single-skill-card__cont {
+    &.done {
+      .text {
+        span {
+          opacity: 1;
+          transform: translate(0, 0);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        p {
+          opacity: 1;
+          transform: translate(0, 0);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+      }
     }
   }
 }
@@ -571,8 +621,9 @@
 
   .trigger-s {
     position: absolute;
-    top: 0;
+    top: -17.9vh;
   }
+
 
   .star-mov {
     width: 2.8229vw;
@@ -581,6 +632,8 @@
     top: -29.8vw;
     left: 29.3vw;
     opacity: 0;
+    transition: all 0.01s linear !important;
+    direction: rtl;
 
     &.hide {
       opacity: 1;
@@ -589,6 +642,7 @@
     img {
       width: auto;
       height: 100%;
+      transition: all 0.01s ease-in !important;
     }
   }
 }
@@ -736,7 +790,7 @@
     max-width: 20.9896vw;
     width: 100%;
     //top: 42.75042vw;
-    top: 34.75042vw;
+    top: 36.55042vw;
     right: 14.9438vw;
   }
 
@@ -1043,35 +1097,36 @@
       object-fit: cover;
     }
 
+
     &:nth-child(1) {
       img {
 
 
-        animation-delay: 0.2s !important;
+        animation-delay: 0.7s !important;
       }
     }
 
     &:nth-child(2) {
       img {
-        animation-delay: 0.5s !important;
+        animation-delay: 0.9s !important;
       }
     }
 
     &:nth-child(3) {
       img {
-        animation-delay: 1s !important;
+        animation-delay: 0.9s !important;
       }
     }
 
     &:nth-child(4) {
       img {
-        animation-delay: 0.7s !important;
+        animation-delay: 1.3s !important;
       }
     }
 
     &:nth-child(5) {
       img {
-        animation-delay: 1.4s !important;
+        animation-delay: 1.5s !important;
       }
     }
   }
@@ -1097,6 +1152,10 @@
       height: 47.6042vw;
       display: flex;
       margin-bottom: 1.4063vw;
+
+      &.anim {
+        animation-delay: 0;
+      }
 
       img {
         width: 100%;
@@ -1187,12 +1246,197 @@
     position: absolute;
     bottom: 41vw;
     right: 22vw;
-    z-index: 4;
+    z-index: 1;
     filter: blur(8px);
+    transition: all 0.01s linear, opacity 0.3s ease !important;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      z-index: 4;
+      img {
+        margin-top: 0;
+      }
+
+    }
 
     img {
+      //opacity: 0 !important;
       width: 100%;
       height: 100%;
+      margin-top: 4vw;
+      transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
+    }
+  }
+
+  .stars-planets {
+    .star-planet {
+
+      & ~ div {
+        opacity: 0 !important;
+        transition: opacity 0.5s linear !important;
+        margin-top: 4vw;
+      }
+      &.active {
+        & ~ div {
+          opacity: 1 !important;
+          margin-top: 4vw;
+          &:nth-child(2) {
+            transform: scale(1);
+            filter: blur(0);
+          }
+          &:nth-child(3) {
+            opacity: 0.9 !important;
+            transform: scale(0.7);
+          }
+          &:nth-child(4) {
+            opacity: 0.8 !important;
+            transform: scale(0.65);
+          }
+          &:nth-child(5) {
+            opacity: 0.7 !important;
+            transform: scale(0.6);
+          }
+          &:nth-child(6) {
+            opacity: 0.6 !important;
+            transform: scale(0.55);
+          }
+          &:nth-child(7) {
+            opacity: 0.5 !important;
+            transform: scale(0.5);
+          }
+          &:nth-child(8) {
+            opacity: 0.4 !important;
+            transform: scale(0.45);
+          }
+          &:nth-child(9) {
+            opacity: 0.3 !important;
+            transform: scale(0.4);
+          }
+          &:nth-child(10) {
+            opacity: 0.3 !important;
+            transform: scale(0.35);
+          }
+          &:nth-child(11) {
+            opacity: 0.3 !important;
+            transform: scale(0.3);
+          }
+          &:nth-child(12) {
+            opacity: 0.3 !important;
+            transform: scale(0.25);
+          }
+          &:nth-child(13) {
+            opacity: 0.3 !important;
+            transform: scale(0.2);
+          }
+          &:nth-child(14) {
+            opacity: 0.3 !important;
+            transform: scale(0.15);
+          }
+        }
+
+      }
+    }
+    div:not(.star-planet) {
+      //opacity: 0 !important;
+      //background: #FDC200;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+
+
+      z-index: 3;
+      background: url("../img/star-vector.svg") no-repeat center / 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(n):not(:nth-child(2)) {
+        filter: blur(20px) !important;
+      }
+      &:nth-child(2) {
+        transform: scale(1);
+        filter: blur(0);
+      }
+      &:nth-child(3) {
+        opacity: 0.9;
+        transform: scale(0.7);
+      }
+      &:nth-child(4) {
+        opacity: 0.8;
+        transform: scale(0.65);
+      }
+      &:nth-child(5) {
+        opacity: 0.7;
+        transform: scale(0.6);
+      }
+      &:nth-child(6) {
+        opacity: 0.6;
+        transform: scale(0.55);
+      }
+      &:nth-child(7) {
+        opacity: 0.5;
+        transform: scale(0.5);
+      }
+      &:nth-child(8) {
+        opacity: 0.4;
+        transform: scale(0.45);
+      }
+      &:nth-child(9) {
+        opacity: 0.4;
+        transform: scale(0.4);
+      }
+      &:nth-child(10) {
+        opacity: 0.4;
+        transform: scale(0.35);
+      }
+      &:nth-child(11) {
+        opacity: 0.4;
+        transform: scale(0.3);
+      }
+      &:nth-child(12) {
+        opacity: 0.4;
+        transform: scale(0.25);
+      }
+      &:nth-child(13) {
+        opacity: 0.4;
+        transform: scale(0.2);
+      }
+      &:nth-child(14) {
+        opacity: 0.4;
+        transform: scale(0.15);
+      }
+
+    }
+    .star-planet:not(:first-child) {
+      filter: blur(12px) !important;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      &:nth-child(2) {
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      &:nth-child(3) {
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      &:nth-child(4) {
+        width: 12px !important;
+        height: 12px !important;
+      }
+      &:nth-child(5) {
+        width: 10px !important;
+        height: 10px !important;
+      }
+      &:nth-child(6) {
+        width: 9px !important;
+        height: 9px !important;
+      }
     }
   }
 
@@ -1243,14 +1487,16 @@
   }
 
   .planet {
-    z-index: 2;
+    z-index: 6;
     position: absolute;
     width: 42.5521vw;
     bottom: 0;
     right: 0;
     height: 40.9896vw;
     mix-blend-mode: luminosity;
-
+    &.active {
+      z-index: 2;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -1360,6 +1606,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
+
   &.opened {
     opacity: 1;
     pointer-events: auto;
@@ -1376,6 +1623,7 @@
   position: relative;
   max-height: calc(100vh - 2.0833vw);
 }
+
 .close-video {
   position: absolute;
   top: 10px;
@@ -1383,6 +1631,7 @@
   width: 1.5625vw;
   height: 1.5625vw;
   cursor: pointer;
+
   span {
     background: #D86E2D;
     height: 2px;
@@ -1392,6 +1641,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
+
     &:nth-child(2) {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
@@ -1401,6 +1651,7 @@
 .video-cont {
   width: 100%;
   height: 100%;
+
   video, iframe {
     width: 100%;
     height: 100%;
@@ -1411,6 +1662,7 @@
 
   .scroll-rev {
     pointer-events: auto;
+
     .scr {
       img {
         width: 4.7222vw !important;
@@ -1430,7 +1682,7 @@
     width: 100%;
     max-width: 100%;
     padding: 11.1111vw 5.5556vw;
-    max-height: calc(100vh - 11.1111vw );
+    max-height: calc(100vh - 11.1111vw);
   }
   .big-title {
     font-size: 20.8333vw;
@@ -1689,10 +1941,12 @@
       top: 47%;
       left: 51%;
       width: 80%;
+      margin-top: 2.7778vw;
 
       strong {
         font-size: 20.8333vw;
-        line-height: 16.6667vw;
+        line-height: 18.67vw;
+        //margin-top: 2.7778vw;
       }
     }
   }

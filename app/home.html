@@ -22,7 +22,7 @@
         <div class="hero-home__bg">
             <div class="img">
                 <img class="lazyload" data-src="./img/hero-i1.jpg" alt="">
-<!--                <video src="./img/flag-vid.mp4" muted autoplay playsinline loop poster type="video/mp4"></video>-->
+                <!--                <video src="./img/flag-vid.mp4" muted autoplay playsinline loop poster type="video/mp4"></video>-->
             </div>
 
         </div>
@@ -275,11 +275,12 @@
 
 <section id="visual" class="section">
 
-    <section  class="section logo-section">
+    <section class="section logo-section">
         <div class="container">
             <div class="logo-section__cont">
                 <span>Logo</span>
-                <p>The needed evolution was made on the logo, while keeping the flagged star as a key element in the logo,
+                <p>The needed evolution was made on the logo, while keeping the flagged star as a key element in the
+                    logo,
                     but making it up-to-date</p>
                 <div class="logo-blocks">
                     <div class="logo-video anim" data-anim-delay="0" data-anim-duration="760"
@@ -317,7 +318,8 @@
             <span class="anim" data-anim-delay="0" data-anim-duration="760"
                   data-anim="fade">Color</span>
                 <p class="anim" data-anim-delay="0" data-anim-duration="760"
-                   data-anim="fade">The original brand colors were adjusted & modified, to be in line with the rebranding
+                   data-anim="fade">The original brand colors were adjusted & modified, to be in line with the
+                    rebranding
                     procedure, among it
                     - to be more iconic.</p>
                 <p class="anim" data-anim-delay="0" data-anim-duration="760"
@@ -388,15 +390,15 @@
 
 <section id="website" class="section website">
     <div class="container counting-delay">
-        <div class="img anim" data-anim-delay="0" data-anim-duration="760"
-             data-anim="fade">
-            <img class="lazyload" data-src="./img/macbookpro@2x.png" alt="">
+        <div class="img">
+            <img src="./img/macbookpro@2x.png" alt="">
         </div>
 
         <span class="anim" data-anim-delay="0" data-anim-duration="760"
               data-anim="fade">Website</span>
         <p class="anim" data-anim-delay="0" data-anim-duration="760"
-           data-anim="fade">In order to stay true to the brand's evolution and its new look & feel, a required transformation was also
+           data-anim="fade">In order to stay true to the brand's evolution and its new look & feel, a required
+            transformation was also
             made on the brand’s Site & other digital assets. </p>
     </div>
     <div class="trigger-round anim">
@@ -426,15 +428,144 @@
             </div>
         </div>
     </div>
-    <div class="star-planet">
-        <img src="./img/star-vector.svg" alt="">
+    <div class="stars-planets">
+        <div class="star-planet">
+            <img src="./img/star-vector.svg" alt="">
+        </div>
+
     </div>
+
     <div class="planet">
         <img class="lazyload desk-only" data-src="./img/globus.svg" alt="">
         <img class="lazyload mob-only" data-src="./img/globus-2.svg" alt="">
 
     </div>
 </section>
+<script>
+    //cursor2
+    // dots is an array of Dot objects,
+    // mouse is an object used to track the X and Y position
+    // of the mouse, set with a mousemove event listener below
+    var dots = [],
+        mouse = {
+            x: 0,
+            y: 0,
+            w: 0,
+            h: 0,
+            bl: 0,
+            z: 0,
+        };
+
+    // The Dot object used to scaffold the dots
+    var Dot = function () {
+        this.x = 0;
+        this.y = 0;
+        this.w = 0;
+        this.h = 0;
+        this.bl = 0;
+        this.z = 1;
+        this.node = (function () {
+            var n = document.createElement("div");
+            n.className = "";
+            document.body.querySelector('.stars-planets').appendChild(n);
+            return n;
+        }());
+    };
+    // The Dot.prototype.draw() method sets the position of
+    // the object's <div> node
+    Dot.prototype.draw = function () {
+        this.node.style.right = this.x + "px";
+        this.node.style.bottom = this.y + "px";
+        this.node.style.width = this.w + "px";
+        this.node.style.height = this.h + "px";
+
+        this.node.style.zIndex = this.z;
+        this.node.style.filter = this.bl;
+    };
+
+    // Creates the Dot objects, populates the dots array
+    for (let i = 1; i < 14; i++) {
+        let d = new Dot();
+        dots.push(d);
+    }
+    var spdDr = 0.69;
+
+    // This is the screen redraw function
+    function draw() {
+        // Make sure the mouse position is set everytime
+        // draw() is called.
+        let x = mouse.x,
+            y = mouse.y,
+            w = mouse.w,
+            h = mouse.h,
+            bl = mouse.bl,
+            z = mouse.z;
+
+        // This loop is where all the 90s magic happens
+        dots.forEach(function (dot, index, dots) {
+            let nextDot = dots[index + 1] || dots[0];
+
+            dot.x = x;
+            dot.y = y;
+            dot.w = w;
+            dot.h = h;
+            dot.bl = bl;
+            dot.z = z;
+            dot.draw();
+            x += (nextDot.x - dot.x) * spdDr;
+            y += (nextDot.y - dot.y) * spdDr;
+            w += (nextDot.w - dot.w) * spdDr;
+            h += (nextDot.h - dot.h) * spdDr;
+            bl += (nextDot.bl - dot.bl) * spdDr;
+            z += (nextDot.z - dot.z) * spdDr;
+
+        });
+    }
+
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutationRecord) {
+
+            let r = (window.innerWidth - document.querySelector('.star-planet').getBoundingClientRect().right)  - parseInt(getComputedStyle(document.querySelector('.star-planet img')).marginLeft, 10);
+            let b = parseInt(getComputedStyle(document.querySelector('.star-planet')).bottom, 10);
+            let w = document.querySelector('.star-planet').offsetWidth;
+            let h = document.querySelector('.star-planet').offsetHeight;
+            let bl = getComputedStyle(document.querySelector('.star-planet')).filter;
+            let z = getComputedStyle(document.querySelector('.star-planet')).zIndex;
+            mouse.x = r;
+            // console.log(w);
+            mouse.y = b;
+
+            mouse.w = w;
+            mouse.h = h;
+            mouse.bl = bl;
+            mouse.z = z;
+        });
+    });
+
+    var target = document.querySelector('.star-planet');
+    observer.observe(target, {attributes: true, attributeFilter: ['style']});
+
+
+    document.querySelector('.star-planet').addEventListener("stylechanged", function (event) {
+        //event.preventDefault();
+        // console.log(document.querySelector('.star-planet'));
+        // mouse.x = event.clientX;
+        // mouse.y = event.clientY;
+    });
+
+    // animate() calls draw() then recursively calls itself
+    // everytime the screen repaints via requestAnimationFrame().
+    function animate() {
+        draw();
+        requestAnimationFrame(animate);
+    }
+
+    // And get it started by calling animate().
+    animate();
+
+
+    //cursor2
+</script>
 
 <div class="modal-window video-modal">
     <div class="modal-container">
@@ -443,7 +574,7 @@
             <span></span>
         </div>
         <div class="video-cont">
-            <video src=""   playsinline loop poster type="video/mp4" controls></video>
+            <video src="" playsinline loop poster type="video/mp4" controls></video>
         </div>
     </div>
 </div>
