@@ -137,7 +137,7 @@ var controller = new ScrollMagic.Controller();
 function createAnimations() {
     if (window.innerWidth > 920) {
         //big star
-        var scene = new ScrollMagic.Scene({triggerElement: ".bg-hand .trigger", duration: '15%'})
+        var scene = new ScrollMagic.Scene({triggerElement: ".skills .trigs-blck .trigger", duration: '15%'})
             // animate color and top border in relation to scroll position
             .setTween(".star-big img", {
                 marginLeft: "-5.0625vw",
@@ -145,7 +145,7 @@ function createAnimations() {
             }) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "img 1 (duration: 15%)"}) // add indicators (requires plugin)
             .addTo(controller);
-        var scene22 = new ScrollMagic.Scene({triggerElement: ".bg-hand .trigger", duration: '25%'})
+        var scene22 = new ScrollMagic.Scene({triggerElement: ".skills .trigs-blck .trigger", duration: '25%'})
             // animate color and top border in relation to scroll position
             .setTween(".star-big", {
                 marginRight: "9vw",
@@ -153,13 +153,13 @@ function createAnimations() {
             }) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "star (duration: 7000%)"}) // add indicators (requires plugin)
             .addTo(controller);
-        var scene2 = new ScrollMagic.Scene({triggerElement: ".bg-hand .trigger", duration: '50%'})
+        var scene2 = new ScrollMagic.Scene({triggerElement: ".skills .trigs-blck .trigger", duration: '50%'})
             // animate color and top border in relation to scroll position
             .setTween(".star-big", {
                 marginLeft: "0",
                 rotation: 13,
-                opacity: 0.6,
-                bottom: "-5.3333vw",
+                opacity: 1,
+                bottom: "30vh",
                 right: "32.5625vw",
                 width: "2.6042vw",
                 height: "2.6042vw",
@@ -169,17 +169,17 @@ function createAnimations() {
             // .addIndicators({name: "star (duration: 70%)"}) // add indicators (requires plugin)
             .addTo(controller);
 
-        var scene3 = new ScrollMagic.Scene({triggerElement: ".bg-hand .trigger2", duration: '25%'})
+        var scene3 = new ScrollMagic.Scene({triggerElement: ".skills .trigs-blck .trigger2", duration: '25%'})
             // animate color and top border in relation to scroll position
             .setTween(".star-big img", {
                 marginLeft: "-3vw",
-                filter: "blur(8px)",}) // the tween durtion can be omitted and defaults to 1
+                filter: "blur(5px)",}) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "img 2 (duration: 25%)"}) // add indicators (requires plugin)
             .addTo(controller);
 //big star
 
 //white star
-        var scene4 = new ScrollMagic.Scene({triggerElement: ".text-skills .trigger", offset: 50})
+        var scene4 = new ScrollMagic.Scene({triggerElement: ".text-skills .trigger", offset: -150})
             // animate color and top border in relation to scroll position
             .setClassToggle(".text-skills", "active") // add class toggle.addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
             // .addIndicators({name: "3 (duration: 300)"}) // add indicators (requires plugin)
@@ -313,9 +313,9 @@ function createAnimations() {
         //planet star
 
         let durPlanet = document.querySelector('.vision').offsetHeight * 0.7;
-        let durPlanet1 = document.querySelector('.vision').offsetHeight * 0.6 * 0.3;
-        let durPlanet2 = document.querySelector('.vision').offsetHeight * 0.6 * 0.3;
-        let durPlanet3 = document.querySelector('.vision').offsetHeight * 0.6 * 0.4;
+        let durPlanet1 = document.querySelector('.vision').offsetHeight * 0.45 * 0.3;
+        let durPlanet2 = document.querySelector('.vision').offsetHeight * 0.45 * 0.3;
+        let durPlanet3 = document.querySelector('.vision').offsetHeight * 0.45 * 0.3;
 
 
 
@@ -323,33 +323,24 @@ function createAnimations() {
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 rotation: 0,
-                right: '31.6647vw',
-                bottom: '32.7861vw',
-                width: "5.2083vw",
-                height: "5.2083vw",
-                filter: "blur(5px)",
-                ease: Linear.easeNone,
+                right: '33.6647vw',
+                bottom: '36.5861vw',
+                width: "4.0083vw",
+                height: "4.0083vw",
+                filter: "blur(4px)",
+                ease: Linear.easeIn,
             }) // the tween durtion can be omitted and defaults to 1
-            // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
+            // .addIndicators({name: "star111 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
-        var scene31 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1 + durPlanet2 + durPlanet3}px`})
-            // animate color and top border in relation to scroll position
 
-
-            .setTween(".star-planet img", {
-                marginLeft: '-8vw',
-                ease: Sine.easeIn,
-            }) // the tween durtion can be omitted and defaults to 1
-            // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
-            .addTo(controller);
-        var scene54 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1 + durPlanet2 + durPlanet3 + 200}px`, offset: -100}, )
+        var scene54 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1 + durPlanet2 + durPlanet3 + 800}px`, offset: -100}, )
             // animate color and top border in relation to scroll position
             .setClassToggle(".star-planet", "active")
 
             // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
-        var scene52 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1 + durPlanet2 + durPlanet3 + 200}px`, offset: 0}, )
+        var scene52 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1 + durPlanet2 + durPlanet3 + 700}px`, offset: 0}, )
             // animate color and top border in relation to scroll position
             .setClassToggle(".vision .planet", "active")
             // the tween durtion can be omitted and defaults to 1
@@ -360,7 +351,7 @@ function createAnimations() {
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 marginLeft: '2vw',
-                ease: Sine.easeIn,
+                ease: Linear.easeIn,
             }) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
@@ -370,33 +361,75 @@ function createAnimations() {
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 rotation: 0,
-                right: '34.6647vw',
-                bottom: '18.7861vw',
-                width: "9.2083vw",
-                height: "9.2083vw",
-                filter: "blur(3px)",
-                ease: Linear.easeNone,
+                right: '39.9647vw',
+                bottom: '26.7861vw',
+                width: "5.9083vw",
+                height: "5.9083vw",
+                filter: "blur(5px)",
+                ease: Linear.easeOut,
             }) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+        var scene166 = new ScrollMagic.Scene({triggerElement: ".vision .trg-1", duration: `${durPlanet2}px`, offset: -50},)
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet img", {
+                marginLeft: '-1vw',
+                marginTop: '1vw',
+                ease: Sine.easeIn,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "111 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
 
         var scene17 = new ScrollMagic.Scene({triggerElement: ".vision .trg-2", duration: `${durPlanet3}px`})
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 rotation: 0,
-                right: '23.6647vw',
+                right: '35.6647vw',
+                bottom: '16.0vw',
+                width: "9.7708vw",
+                height: "9.7708vw",
+                filter: "blur(0px)",
+                ease: Linear.easeNone,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "trg2 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+        var scene1676 = new ScrollMagic.Scene({triggerElement: ".vision .trg-2", duration: `${durPlanet3}px`, offset: -50},)
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet img", {
+                marginLeft: '-1.4vw',
+                marginTop: '2.4vw',
+                ease: Sine.easeOut,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "2222 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+
+        var scene177 = new ScrollMagic.Scene({triggerElement: ".vision .trg-3", duration: `${durPlanet3 + (durPlanet3 * 0.5)}px`})
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet", {
+                rotation: 0,
+                right: '25.6647vw',
                 bottom: '-3.0vw',
                 width: "16.7708vw",
                 height: "16.7708vw",
                 filter: "blur(0px)",
                 ease: Linear.easeNone,
             }) // the tween durtion can be omitted and defaults to 1
-            // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
+            // .addIndicators({name: "trg3 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
-
 //planet star
 //parallax 3 el
-
+        var scene16766 = new ScrollMagic.Scene({triggerElement: ".vision .trg-3", duration: `${durPlanet2 + (durPlanet3 * 0.5)}px`, offset: -50},)
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet img", {
+                marginLeft: '-2.4vw',
+                marginTop: '1.4vw',
+                ease: Sine.easeOut,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "333 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
 
     } else {
 //big star
@@ -433,7 +466,7 @@ function createAnimations() {
 //big star
 
 //white star
-        var scene4 = new ScrollMagic.Scene({triggerElement: ".text-skills .trigger", offset: 50})
+        var scene4 = new ScrollMagic.Scene({triggerElement: ".text-skills .trigger", offset: 130})
             // animate color and top border in relation to scroll position
             .setClassToggle(".text-skills", "active") // add class toggle.addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
             // .addIndicators({name: "3 (duration: 300)"}) // add indicators (requires plugin)
@@ -447,7 +480,7 @@ function createAnimations() {
         let h = (23.5 / 100) * window.innerWidth;
         let hVh = (h / window.innerHeight) * 100;
 
-        let h2 = (57.8 / 100) * window.innerWidth;
+        let h2 = (102.8 / 100) * window.innerWidth;
         let hVh2 = (h2 / window.innerHeight) * 100;
 //formula for getting vh from vw size;
 
@@ -458,7 +491,7 @@ function createAnimations() {
             .setTween(".star-mov", {
                 marginLeft: "0",
                 rotation: 0,
-                top: "52.8vw",
+                top: "44.8vw",
                 left: "47%",
                 width: "6.9444vw",
                 height: "6.9444vw",
@@ -514,8 +547,8 @@ function createAnimations() {
 
         //planet star
 
-        let durPlanet = document.querySelector('.vision').offsetHeight * 0.37;
-        let durPlanet1 = document.querySelector('.vision').offsetHeight * 0.37 / 3;
+        let durPlanet = document.querySelector('.vision').offsetHeight * 0.27;
+        let durPlanet1 = document.querySelector('.vision').offsetHeight * 0.27 / 3;
         let durPlanet2 = document.querySelector('.vision').offsetHeight * 0.3 * 0.3;
         let durPlanet3 = document.querySelector('.vision').offsetHeight * 0.9 * 0.4;
 
@@ -533,46 +566,65 @@ function createAnimations() {
             // .addIndicators({name: "star2 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
 
-        var scene15 = new ScrollMagic.Scene({triggerElement: ".vision", duration: `${durPlanet1}px`, offset: durPlanet})
-            // animate color and top border in relation to scroll position
-            .setTween(".star-planet", {
-                rotation: 0,
-                right: '70.5000vw',
-                bottom: '109.1667vw',
-                width: "12.7778vw",
-                height: "12.7778vw",
-                filter: "blur(3px)",
-                ease: Linear.easeNone,
-            }) // the tween durtion can be omitted and defaults to 1
-            // .addIndicators({name: "1111 (duration: 50)"}) // add indicators (requires plugin)
-            .addTo(controller);
+
 
         var scene16 = new ScrollMagic.Scene({triggerElement: ".vision .trg-1", duration: `${durPlanet1}px`})
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 rotation: 0,
-                right: '71.2778vw',
-                bottom: '76.0556vw',
-                width: "24.7778vw",
-                height: "24.7778vw",
+                right: '63.5000vw',
+                bottom: '118.1667vw',
+                width: "12.7778vw",
+                height: "12.7778vw",
+                filter: "blur(3px)",
+
+                ease: Linear.easeNone,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "111 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+        var scene177 = new ScrollMagic.Scene({triggerElement: ".vision .trg-2", duration: `${durPlanet1}px`})
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet", {
+                right: '78.2778vw',
+                bottom: '82.0556vw',
+                width: "15.7778vw",
+                height: "15.7778vw",
                 filter: "blur(2px)",
+
+
                 ease: Linear.easeNone,
             }) // the tween durtion can be omitted and defaults to 1
             // .addIndicators({name: "2222 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
+        var scene17777 = new ScrollMagic.Scene({triggerElement: ".vision .trg-3", duration: `${durPlanet1}px`})
+            // animate color and top border in relation to scroll position
+            .setTween(".star-planet", {
+                rotation: 0,
+                right: '69.1111vw',
+                bottom: '41.0000vw',
+                width: "25.7778vw",
+                height: "25.7778vw",
+                filter: "blur(2px)",
 
-        var scene17 = new ScrollMagic.Scene({triggerElement: ".vision .trg-2", duration: `${durPlanet1}px`})
+
+                ease: Linear.easeNone,
+            }) // the tween durtion can be omitted and defaults to 1
+            // .addIndicators({name: "3333 (duration: 50)"}) // add indicators (requires plugin)
+            .addTo(controller);
+
+        var scene1888 = new ScrollMagic.Scene({triggerElement: ".vision .trg-4", duration: `${durPlanet1}px`})
             // animate color and top border in relation to scroll position
             .setTween(".star-planet", {
                 rotation: 0,
                 right: '31.1111vw',
-                bottom: '9.0000vw',
+                bottom: '-3.0000vw',
                 width: "52.7778vw",
                 height: "52.7778vw",
                 filter: "blur(0px)",
                 ease: Linear.easeNone,
             }) // the tween durtion can be omitted and defaults to 1
-            // .addIndicators({name: "3333 (duration: 50)"}) // add indicators (requires plugin)
+            // .addIndicators({name: "444 (duration: 50)"}) // add indicators (requires plugin)
             .addTo(controller);
 
 //planet star
@@ -631,9 +683,9 @@ $(window).scroll(function (e) {
     $el2 = $('.hero-home');
     $el3 = $('.reveal-hand');
     // console.log($(this).scrollTop());
-    $el.toggleClass('header-white', $(this).scrollTop() < (window.innerHeight * 0.3));
-    $el2.toggleClass('reveal', $(this).scrollTop() > (window.innerHeight * 0.3));
-    $el3.toggleClass('reveal', $(this).scrollTop() > (window.innerHeight * 0.3));
+    $el.toggleClass('header-white', $(this).scrollTop() < (window.innerHeight * 0.25));
+    $el2.toggleClass('reveal', $(this).scrollTop() > (window.innerHeight * 0.25));
+    $el3.toggleClass('reveal', $(this).scrollTop() > (window.innerHeight * 0.25));
 
 });
 

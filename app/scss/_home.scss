@@ -34,7 +34,7 @@
   .hero-home__bg {
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 1.3s linear;
+    transition: opacity 1.2s linear;
   }
 
   .container {
@@ -55,7 +55,7 @@
     .hero-home__bg {
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.8s linear;
+      transition: opacity 1.4s linear;
     }
 
     .big-title {
@@ -82,7 +82,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  transition: opacity 1.5s ease;
+  transition: opacity 1.4s ease;
   opacity: 0;
 
   &.reveal {
@@ -285,6 +285,26 @@
 
 .skills {
   width: 100%;
+  position: relative;
+  z-index: 3;
+  .trigs-blck {
+    height: 150vh;
+    position: absolute;
+    bottom: 100%;
+
+    & > .trigger {
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+
+    & > .trigger2 {
+      position: absolute;
+      top: calc(50% + 15vh);
+      right: 0;
+    }
+  }
+
 
 }
 
@@ -385,11 +405,11 @@
     left: 50%;
     width: 2.4479vw;
     height: 2.4479vw;
-    transform: translate(-50%, -100%) scale(1.2);
+    transform: translate(-50%, -100%) scale(1);
     display: inline-block;
     content: '';
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(2px);
     transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
     background: url("../img/star-white.svg") no-repeat center / 100%;
   }
@@ -614,7 +634,7 @@
     z-index: 3;
     @for $i from 1 through 8 {
       &:nth-child(#{$i}) {
-        top: calc(52.7vh + (26vh * (#{$i} - 1)));
+        top: calc(48.0vh + (30vh * (#{$i} - 1)));
       }
     }
   }
@@ -695,7 +715,7 @@
 
     &.visible {
       &::before {
-        opacity: 1;
+        //opacity: 1;
       }
     }
 
@@ -813,6 +833,7 @@
 .logo-section {
   width: 100%;
   padding: 10.4688vw 0 7.1875vw;
+  background: #fff;
 }
 
 .logo-section__cont {
@@ -912,9 +933,10 @@
   padding: 4.0104vw 0 6.8750vw;
   position: relative;
   overflow: hidden;
+  background: #fff;
 
   .parall {
-    top: -130vh;
+    top: -150vh;
     right: 0;
     position: fixed;
     width: 6.0938vw;
@@ -1027,6 +1049,7 @@
 .merch-section {
   width: 100%;
   padding: 6.8229vw 0 8.4896vw;
+  background: #fff;
 }
 
 .merch-cont {
@@ -1138,6 +1161,7 @@
   padding-bottom: 5.8333vw;
   position: relative;
   overflow: hidden;
+  background: #fff;
 
   .container {
     position: relative;
@@ -1221,10 +1245,11 @@
   background: linear-gradient(97.57deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);
   position: relative;
   padding: 13.2292vw 0 12.2396vw;
+  overflow: hidden;
 
   .trg-1 {
     position: absolute;
-    top: calc(100% * 0.6 * 0.3);
+    top: calc(100% * 0.45 * 0.3);
     height: 2px;
     width: 100px;
     right: 0;
@@ -1233,7 +1258,15 @@
 
   .trg-2 {
     position: absolute;
-    top: calc((100% * 0.6 * 0.3) * 2);
+    top: calc((100% * 0.45 * 0.3) * 2);
+    height: 2px;
+    width: 100px;
+    right: 0;
+    //background: white;
+  }
+  .trg-3 {
+    position: absolute;
+    top: calc((100% * 0.45 * 0.3) * 3);
     height: 2px;
     width: 100px;
     right: 0;
@@ -1241,11 +1274,11 @@
   }
 
   .star-planet {
-    width: 2.8854vw;
-    height: 2.8854vw;
+    width: 2.4854vw;
+    height: 2.4854vw;
     position: absolute;
-    bottom: 41vw;
-    right: 22vw;
+    bottom: 40.4vw;
+    right: 24vw;
     z-index: 1;
     filter: blur(8px);
     transition: all 0.01s linear, opacity 0.3s ease !important;
@@ -1264,8 +1297,6 @@
       //opacity: 0 !important;
       width: 100%;
       height: 100%;
-      margin-top: 4vw;
-      transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
     }
   }
 
@@ -1731,14 +1762,28 @@
       background: #fff;
       pointer-events: none;
       opacity: 0;
-      top: calc((100% * 0.37) + ((100% * 0.37) / 3));
+      top: calc((100% * 0.17) + ((100% * 0.27) / 3));
     }
 
     .trg-2 {
       opacity: 0;
       pointer-events: none;
       background: #fff;
-      top: calc((100% * 0.37) + (((100% * 0.37) / 3) * 2));
+      top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 2));
+    }
+    .trg-3 {
+      opacity: 0;
+      pointer-events: none;
+      background: #fff;
+      position: absolute;
+      top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 3));
+    }
+    .trg-4 {
+      opacity: 0;
+      pointer-events: none;
+      background: #fff;
+      position: absolute;
+      top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 4));
     }
   }
   .text-skills {
@@ -2089,7 +2134,7 @@
     }
   }
   .skills {
-    z-index: 2;
+    z-index: 3;
   }
   .colors-section .parall {
     width: 10.2778vw;

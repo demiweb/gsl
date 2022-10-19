@@ -26,17 +26,33 @@
 }
 .first-section {
   width: 100%;
-  height: 140vh;
+  height: 170vh;
   .hero-home {
     position: sticky;
     top: 0;
     //opacity: 0.5;
   }
   .reveal-hand {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     //opacity: 0.5;
-    margin-top: -60vh;
+  }
+}
+.section {
+  z-index: 2;
+  &.first-section {
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .first-section {
+    height: 120vh;
+    .reveal-hand {
+      margin-top: -80vh;
+      position: sticky;
+    }
   }
 }
 

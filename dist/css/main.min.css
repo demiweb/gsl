@@ -645,16 +645,28 @@ p {
 
 .first-section {
   width: 100%;
-  height: 140vh; }
+  height: 170vh; }
   .first-section .hero-home {
     position: -webkit-sticky;
     position: sticky;
     top: 0; }
   .first-section .reveal-hand {
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
-    margin-top: -60vh; }
+    left: 0; }
+
+.section {
+  z-index: 2; }
+  .section.first-section {
+    z-index: 1; }
+
+@media screen and (max-width: 920px) {
+  .first-section {
+    height: 120vh; }
+    .first-section .reveal-hand {
+      margin-top: -80vh;
+      position: -webkit-sticky;
+      position: sticky; } }
 
 .header-container {
   width: 100%;
@@ -990,9 +1002,9 @@ p {
   .hero-home .hero-home__bg {
     opacity: 1;
     pointer-events: auto;
-    -webkit-transition: opacity 1.3s linear;
-    -o-transition: opacity 1.3s linear;
-    transition: opacity 1.3s linear; }
+    -webkit-transition: opacity 1.2s linear;
+    -o-transition: opacity 1.2s linear;
+    transition: opacity 1.2s linear; }
   .hero-home .container .play {
     opacity: 1;
     pointer-events: auto;
@@ -1008,9 +1020,9 @@ p {
   .hero-home.reveal .hero-home__bg {
     opacity: 0;
     pointer-events: none;
-    -webkit-transition: opacity 0.8s linear;
-    -o-transition: opacity 0.8s linear;
-    transition: opacity 0.8s linear; }
+    -webkit-transition: opacity 1.4s linear;
+    -o-transition: opacity 1.4s linear;
+    transition: opacity 1.4s linear; }
   .hero-home.reveal .big-title {
     text-shadow: none; }
   .hero-home.reveal .container .play {
@@ -1030,9 +1042,9 @@ p {
   width: 100%;
   height: 100vh;
   position: relative;
-  -webkit-transition: opacity 1.5s ease;
-  -o-transition: opacity 1.5s ease;
-  transition: opacity 1.5s ease;
+  -webkit-transition: opacity 1.4s ease;
+  -o-transition: opacity 1.4s ease;
+  transition: opacity 1.4s ease;
   opacity: 0; }
   .reveal-hand.reveal {
     opacity: 1; }
@@ -1258,7 +1270,21 @@ p {
          object-fit: cover; }
 
 .skills {
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  z-index: 3; }
+  .skills .trigs-blck {
+    height: 150vh;
+    position: absolute;
+    bottom: 100%; }
+    .skills .trigs-blck > .trigger {
+      position: absolute;
+      top: 50%;
+      right: 0; }
+    .skills .trigs-blck > .trigger2 {
+      position: absolute;
+      top: calc(50% + 15vh);
+      right: 0; }
 
 .skills-top {
   width: 100%;
@@ -1382,14 +1408,14 @@ p {
     left: 50%;
     width: 2.4479vw;
     height: 2.4479vw;
-    -webkit-transform: translate(-50%, -100%) scale(1.2);
-        -ms-transform: translate(-50%, -100%) scale(1.2);
-            transform: translate(-50%, -100%) scale(1.2);
+    -webkit-transform: translate(-50%, -100%) scale(1);
+        -ms-transform: translate(-50%, -100%) scale(1);
+            transform: translate(-50%, -100%) scale(1);
     display: inline-block;
     content: '';
     opacity: 0;
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
     transition: opacity 0.3s ease, -webkit-transform 0.3s ease, -webkit-filter 0.3s ease;
     -o-transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
@@ -1630,21 +1656,21 @@ p {
     position: absolute;
     z-index: 3; }
     .promises-height .trigg:nth-child(1) {
-      top: calc(52.7vh + (26vh * (1 - 1))); }
+      top: calc(48.0vh + (30vh * (1 - 1))); }
     .promises-height .trigg:nth-child(2) {
-      top: calc(52.7vh + (26vh * (2 - 1))); }
+      top: calc(48.0vh + (30vh * (2 - 1))); }
     .promises-height .trigg:nth-child(3) {
-      top: calc(52.7vh + (26vh * (3 - 1))); }
+      top: calc(48.0vh + (30vh * (3 - 1))); }
     .promises-height .trigg:nth-child(4) {
-      top: calc(52.7vh + (26vh * (4 - 1))); }
+      top: calc(48.0vh + (30vh * (4 - 1))); }
     .promises-height .trigg:nth-child(5) {
-      top: calc(52.7vh + (26vh * (5 - 1))); }
+      top: calc(48.0vh + (30vh * (5 - 1))); }
     .promises-height .trigg:nth-child(6) {
-      top: calc(52.7vh + (26vh * (6 - 1))); }
+      top: calc(48.0vh + (30vh * (6 - 1))); }
     .promises-height .trigg:nth-child(7) {
-      top: calc(52.7vh + (26vh * (7 - 1))); }
+      top: calc(48.0vh + (30vh * (7 - 1))); }
     .promises-height .trigg:nth-child(8) {
-      top: calc(52.7vh + (26vh * (8 - 1))); }
+      top: calc(48.0vh + (30vh * (8 - 1))); }
   .promises-height .trigger-s {
     position: absolute;
     top: -17.9vh; }
@@ -1724,8 +1750,6 @@ p {
           -ms-transform: translate(-50%, -100%);
               transform: translate(-50%, -100%);
       background: url("../img/star-vector.svg") no-repeat center/100%; }
-    .promises .big-title.visible::before {
-      opacity: 1; }
     .promises .big-title strong {
       font-weight: 900;
       font-size: 8.7500vw;
@@ -1819,7 +1843,8 @@ p {
 
 .logo-section {
   width: 100%;
-  padding: 10.4688vw 0 7.1875vw; }
+  padding: 10.4688vw 0 7.1875vw;
+  background: #fff; }
 
 .logo-section__cont {
   width: 100%;
@@ -1929,9 +1954,10 @@ p {
   width: 100%;
   padding: 4.0104vw 0 6.8750vw;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #fff; }
   .colors-section .parall {
-    top: -130vh;
+    top: -150vh;
     right: 0;
     position: fixed;
     width: 6.0938vw;
@@ -2130,7 +2156,8 @@ p {
 
 .merch-section {
   width: 100%;
-  padding: 6.8229vw 0 8.4896vw; }
+  padding: 6.8229vw 0 8.4896vw;
+  background: #fff; }
 
 .merch-cont {
   width: 100%;
@@ -2225,7 +2252,8 @@ p {
   padding-top: 6.6667vw;
   padding-bottom: 5.8333vw;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #fff; }
   .website .container {
     position: relative;
     z-index: 2;
@@ -2307,25 +2335,32 @@ p {
   background: -o-linear-gradient(352.43deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);
   background: linear-gradient(97.57deg, #062137 1.97%, #0F3554 41.76%, #0E4E70 76.41%, #056A8B 100%);
   position: relative;
-  padding: 13.2292vw 0 12.2396vw; }
+  padding: 13.2292vw 0 12.2396vw;
+  overflow: hidden; }
   .vision .trg-1 {
     position: absolute;
-    top: calc(100% * 0.6 * 0.3);
+    top: calc(100% * 0.45 * 0.3);
     height: 2px;
     width: 100px;
     right: 0; }
   .vision .trg-2 {
     position: absolute;
-    top: calc((100% * 0.6 * 0.3) * 2);
+    top: calc((100% * 0.45 * 0.3) * 2);
+    height: 2px;
+    width: 100px;
+    right: 0; }
+  .vision .trg-3 {
+    position: absolute;
+    top: calc((100% * 0.45 * 0.3) * 3);
     height: 2px;
     width: 100px;
     right: 0; }
   .vision .star-planet {
-    width: 2.8854vw;
-    height: 2.8854vw;
+    width: 2.4854vw;
+    height: 2.4854vw;
     position: absolute;
-    bottom: 41vw;
-    right: 22vw;
+    bottom: 40.4vw;
+    right: 24vw;
     z-index: 1;
     -webkit-filter: blur(8px);
             filter: blur(8px);
@@ -2340,11 +2375,7 @@ p {
         margin-top: 0; }
     .vision .star-planet img {
       width: 100%;
-      height: 100%;
-      margin-top: 4vw;
-      -webkit-transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
-      -o-transition: all 0.01s ease-in-out, margin-top 0.4s linear !important;
-      transition: all 0.01s ease-in-out, margin-top 0.4s linear !important; }
+      height: 100%; }
   .vision .stars-planets .star-planet ~ div {
     opacity: 0 !important;
     -webkit-transition: opacity 0.5s linear !important;
@@ -2793,12 +2824,24 @@ p {
     background: #fff;
     pointer-events: none;
     opacity: 0;
-    top: calc((100% * 0.37) + ((100% * 0.37) / 3)); }
+    top: calc((100% * 0.17) + ((100% * 0.27) / 3)); }
   .vision .trg-2 {
     opacity: 0;
     pointer-events: none;
     background: #fff;
-    top: calc((100% * 0.37) + (((100% * 0.37) / 3) * 2)); }
+    top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 2)); }
+  .vision .trg-3 {
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    position: absolute;
+    top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 3)); }
+  .vision .trg-4 {
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    position: absolute;
+    top: calc((100% * 0.17) + (((100% * 0.27) / 3) * 4)); }
   .text-skills::before {
     width: 9.4444vw;
     height: 9.4444vw;
@@ -3077,7 +3120,7 @@ p {
       font-size: 3.8889vw;
       line-height: 4.1667vw; }
   .skills {
-    z-index: 2; }
+    z-index: 3; }
   .colors-section .parall {
     width: 10.2778vw;
     height: 125.8333vw;
